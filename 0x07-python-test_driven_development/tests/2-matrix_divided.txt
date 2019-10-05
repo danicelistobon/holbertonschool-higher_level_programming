@@ -1,0 +1,58 @@
+The ``2-matrix_divided`` module
+===============================
+
+Using ``matrix_divided`` function
+------------------------------
+
+First import ``matrix_divided`` from the ``2-matrix_divided`` module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+
+    1. Correct output
+
+        >>> matrix_divided([[1, 2], [3, 4]], 2)
+        [[0.5, 1.0], [1.5, 2.0]]
+
+    2. Divisor 0
+
+        >>> matrix_divided([[1, 2], [3, 4]], 0)
+        Traceback (most recent call last):
+        ...
+        ZeroDivisionError: division by zero
+
+    3. Divisor string
+
+        >>> matrix_divided([[1, 2], [3, 4]], 'hola')
+        Traceback (most recent call last):
+        ...
+        TypeError: div must be a number
+
+    4. Different size
+
+        >>> matrix_divided([[1, 2], [3]], 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: Each row of the matrix must have the same size
+
+    5. Error list - str
+
+        >>> matrix_divided([[1, 2], 'hola'], 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    6. Error different elements on list
+
+        >>> matrix_divided([[1, 2], [1, 'hola']], 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    7. Without divisor
+
+        >>> matrix_divided([[1, 2], [3, 4]])
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix_divided() missing 1 required positional argument: 'div'
