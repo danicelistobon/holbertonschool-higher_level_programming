@@ -9,6 +9,12 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_max_int(self):
         self.assertEqual(max_integer([4, 656, 34]), 656)
+        
+    def test_max_int_end(self):
+        self.assertEqual(max_integer([4, 44, 3455]), 3455)
+        
+    def test_max_int_beginning(self):
+        self.assertEqual(max_integer([31423, 656, 34]), 31423)
 
     def test_max_float(self):
         self.assertEqual(max_integer([23, 3454.21, 454]), 3454.21)
