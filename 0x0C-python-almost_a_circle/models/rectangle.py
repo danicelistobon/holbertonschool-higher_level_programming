@@ -1,0 +1,74 @@
+#!/usr/bin/python3
+"""Module to inherit from Base
+"""
+
+
+from .base import Base
+
+
+class Rectangle(Base):
+    """Rectangle class that inherits from Base
+    """
+
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """Constructor of the Rectangle class
+            Args:
+                width (int): rectangle width
+                height (int): rectangle height
+                x (int): attribute
+                y (int): attribute
+                id (int): unique id
+        """
+        super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
+    @property
+    def width(self):
+        """Width getter
+        """
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """Width setter
+        """
+        self.__width = value
+
+    @property
+    def height(self):
+        """Height getter
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """Height setter
+        """
+        self.__height = value
+
+    @property
+    def x(self):
+        """X getter
+        """
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """X setter
+        """
+        self.__x = value
+
+    @property
+    def y(self):
+        """Y getter
+        """
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """Y setter
+        """
+        self.__y = value
