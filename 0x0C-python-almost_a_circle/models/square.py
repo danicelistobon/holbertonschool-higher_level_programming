@@ -14,8 +14,8 @@ class Square(Rectangle):
         """Constructor of the Square class
             Args:
                 size (int): square size
-                x (int): attribute
-                y (int): attribute
+                x (int): space left
+                y (int): space above
                 id (int): unique id
         """
         super().__init__(size, size, x, y, id)
@@ -42,6 +42,9 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Assigns attributes
+            Args:
+                *args: pointer to a argument list
+                **kwargs: double pointer to a dictionary: key/value
         """
         if args:
             for arg, el in zip(args, range(4)):

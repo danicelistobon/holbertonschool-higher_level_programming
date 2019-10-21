@@ -15,8 +15,8 @@ class Rectangle(Base):
             Args:
                 width (int): rectangle width
                 height (int): rectangle height
-                x (int): attribute
-                y (int): attribute
+                x (int): space left
+                y (int): space above
                 id (int): unique id
         """
         super().__init__(id)
@@ -111,6 +111,9 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute or assigns a key/value
             argument to attributes
+            Args:
+                *args: pointer to a argument list
+                **kwargs: double pointer to a dictionary: key/value
         """
         if args:
             for arg, el in zip(args, range(5)):
