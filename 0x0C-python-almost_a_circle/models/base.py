@@ -4,12 +4,12 @@
 
 
 import json
+import os
 
 
 class Base:
     """Base class
     """
-
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -66,3 +66,19 @@ class Base:
             dummy = cls(36916)
             dummy.update(**dictionary)
             return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances
+        """
+        filename = '{}.json'.format(cls.__name__)
+        list_ins = []
+
+        if os.path.isfile(filename):
+            with open(filename, 'r', encoding='utf-8') as new_file:
+                content = cls.from_json_string(new_file.read())
+            for i in content:
+                list_ins.append(cls.create(**i))
+            return list_ins
+        else:
+            return []
