@@ -17,7 +17,6 @@ class Base:
             Args:
                 id (int): unique id of the classes
         """
-
         if id is not None:
             self.id = id
         else:
@@ -32,3 +31,17 @@ class Base:
             return '[]'
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes the JSON string representation of list_objs to a file
+        """
+        filename = '{}.json'.format(cls.__name__)
+        dic = []
+
+        if list_objs is not None:
+            for i in list_objs:
+                dic.append(cls.to_dictionary(i))
+
+        with open(filename, 'w', encoding='utf-8') as new_file:
+            new_file.write(cls.to_json_string(dic))
