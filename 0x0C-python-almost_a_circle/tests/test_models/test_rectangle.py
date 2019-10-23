@@ -148,7 +148,7 @@ class TestRectangle(unittest.TestCase):
         """Test update kwargs
         """
         r = Rectangle(16, 9, 6, 3, 33)
-        r.update(id = 6, x = 5, height = 5)
+        r.update(id=6, x=5, height=5)
         self.assertEqual(6, r.id)
         self.assertEqual(5, r.x)
         self.assertEqual(5, r.height)
